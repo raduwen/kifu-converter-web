@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+body {
+  padding-top: 64px;
+  padding-bottom: 32px;
+}
+
+#footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: solid #ddd 1px;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="well">
+        <h1>棋譜コンバーター</h1>
+      </div>
+      <form action="/convert" method="post" enctype="multipart/form-data" class="form-inline">
+        <div class="form-group">
+          <label for="kifu-file">棋譜ファイル</label>
+          <input type="file" id="kifu-file" name="kifu-file">
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="radio" name="convert-type" value="ki2" checked/>
+            ki2
+          </label>
+          <label>
+            <input type="radio" name="convert-type" value="kif"/>
+            kif
+          </label>
+          <label>
+            <input type="radio" name="convert-type" value="csa"/>
+            csa
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">変換</button>
+
+        <% if @result %>
+        <hr>
+        <p><b>結果</b></p>
+        <textarea cols=60 rows=20><%= @result %></textarea>
+        <% end %>
+      </form>
+    </div>
+
+    <div id="footer" class="container">
+      <p>
+      &copy; 2016 raduwen. All rights reserved.
+      Develop at <a href="https://github.com/raduwen/kifu-converter-web">github/kifu-converter-web</a>
+      </p>
+    </div>
+  </body>
+</html>
