@@ -3,7 +3,7 @@ GEM
   specs:
     backports (3.6.8)
     coderay (1.1.1)
-    jkf (0.4.1)
+    jkf (0.4.2)
     method_source (0.8.2)
     multi_json (1.11.2)
     pry (0.10.3)
